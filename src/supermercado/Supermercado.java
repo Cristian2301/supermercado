@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Supermercado {
 	private String nombre;
-	private Integer direccion;
-	private ArrayList <Producto> productos;
+	private String direccion;
+	private ArrayList <Producto> productos = new ArrayList <Producto>();
 
 	private String getNombre() {
 		return nombre;
@@ -15,19 +15,28 @@ public class Supermercado {
 		this.nombre = nombre;
 	}
 	
-	private Integer getDireccion() {
+	private String getDireccion() {
 		return direccion;
 	}
 	
-	private void setDireccion(Integer direccion) {
+	private void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
 	
 	
-	private Supermercado(String nombre, Integer direccion, Producto productos) {
+	public Supermercado(String nombre, String direccion) {
 		this.nombre = nombre;
 		this.direccion = direccion;
-		this.productos = new ArrayList<Producto>();
+	}
+	
+	
+	public void agregarProducto(Producto producto) {
+		productos.add(producto);
+	}
+	
+	
+	public Integer getCantidadDeProductos() {
+		return this.cantTotalProductos();
 	}
 	
 	
@@ -36,8 +45,13 @@ public class Supermercado {
 	}
 	
 	
-	private Integer sumaDePreciosDeProductos() {
-		Integer precioTotal = 0;
+	public Double getPrecioTotal() {
+		return sumaDePreciosDeProductos();
+	}
+	
+	
+	private Double sumaDePreciosDeProductos() {
+		Double precioTotal = 0.0;
 			for (Producto p : productos) {
 				precioTotal += p.getPrecio();
 			}

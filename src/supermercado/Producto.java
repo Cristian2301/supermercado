@@ -2,7 +2,7 @@ package supermercado;
 
 public class Producto {
 	public String nombre;
-	public Integer precio;
+	public Double precio;
 	public Boolean esParteDePreciosCuidados;
 	
 	
@@ -14,11 +14,11 @@ public class Producto {
 		this.nombre = nombre;
 	}
 	
-	public Integer getPrecio() {
+	public Double getPrecio() {
 		return precio;
 	}
 	
-	public void setPrecio(Integer precio) {
+	public void setPrecio(Double precio) {
 		this.precio = precio;
 	}
 	
@@ -26,15 +26,28 @@ public class Producto {
 		return esParteDePreciosCuidados;
 	}
 	
+	
+	public Boolean esPrecioCuidado() {
+		return getEsParteDePreciosCuidados();
+	}
+	
+	
 	public void setEsParteDePreciosCuidados(Boolean esParteDePreciosCuidados) {
 		this.esParteDePreciosCuidados = esParteDePreciosCuidados;
 	}
 	
 	
-	public Producto(String nombre, Integer precio, Boolean esParteDePreciosCuidados) {
+	public Producto(String nombre, Double precio, Boolean esParteDePreciosCuidados) {
 		this.nombre = nombre;
-		this.precio
+		this.precio = precio;
 		this.esParteDePreciosCuidados = esParteDePreciosCuidados;
 	}
+	
+	
+	public void aumentarPrecio(Double n) {
+		precio += n;
+	}
+	
+	
 	
 }
