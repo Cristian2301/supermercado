@@ -7,19 +7,19 @@ public class Supermercado {
 	private String direccion;
 	private ArrayList <Producto> productos = new ArrayList <Producto>();
 
-	private String getNombre() {
+	public String getNombre() {
 		return nombre;
 	}
 	
-	private void setNombre(String nombre) {
+	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 	
-	private String getDireccion() {
+	public String getDireccion() {
 		return direccion;
 	}
 	
-	private void setDireccion(String direccion) {
+	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
 	

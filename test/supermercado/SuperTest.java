@@ -1,9 +1,8 @@
 package supermercado;
 
 import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 
 public class SuperTest {
@@ -28,12 +27,12 @@ public class SuperTest {
 		assertEquals(2, supermercado.getCantidadDeProductos());
 	}
 	
-//	@SuppressWarnings("deprecation")
-//	@Test
-//	public void testPrecioTotal() {
-//		assertEquals(new Double(0), supermercado.getPrecioTotal());
-//		supermercado.agregarProducto(arroz);
-//		supermercado.agregarProducto(detergente);
-//		assertEquals(new Double(93.9), supermercado.getPrecioTotal());
-//	}
+	@SuppressWarnings("deprecation")
+	@Test
+	public void testPrecioTotal() {
+		assertEquals(new Double(0), supermercado.getPrecioTotal());
+		supermercado.agregarProducto(arroz);
+		supermercado.agregarProducto(detergente);
+		assertEquals(new Double(93.9), supermercado.getPrecioTotal());
+	}
 }
